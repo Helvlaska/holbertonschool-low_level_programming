@@ -1,1 +1,2 @@
 0-preprocessor : Write a script that runs a C file through the preprocessor and save the result into another file. : gcc -E $MYFILE -o interm
+1-compiler : Write a script that compiles a C file but does not link. : gcc -c $MYFILE (-c ajoute par defaut l'extention .o au fichier apres compilation)

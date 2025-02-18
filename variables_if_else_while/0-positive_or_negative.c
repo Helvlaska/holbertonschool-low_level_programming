@@ -4,7 +4,6 @@
 /**
  * main - compare si n est positif ou negatif ou egale a 0
  *
- *
  * Return: 0 is ok
  */
 
@@ -18,7 +17,7 @@ int main(void)
 	{
 		printf("%d is positive\n", n);
 	}
-	if else(n == 0)
+	else if(n == 0)
 	{
 		printf("%d is zero\n", n);
 	}

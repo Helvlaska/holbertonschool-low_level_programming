@@ -1,11 +1,5 @@
-#include <unistd.h>
 /**
- * main - create function putchar
+ * file to define function
  *
- * Return: 0 it's ok
  */
-
-int _putchar(char c)
-{
-    return write(1, &c, 1);
-}
+int _putchar(char c);

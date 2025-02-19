@@ -1,0 +1,18 @@
+#include "main.h"
+/**
+ * function print alphabet
+ *
+ * Return: 0 it's ok
+ */
+
+void print_alphabet(void)
+{
+	char i;
+	char a = 'a';
+	char z = 'z';
+
+	for (i = a; i <= z; i++)
+	{
+		_putchar(i);
+	}
+}

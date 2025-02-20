@@ -1,0 +1,29 @@
+#include "main.h"
+/**
+ * jack_bauer - prints every minute of the day of Jack Bauer
+ *
+ *
+ * Description: prints every minute of the day of Jack Bauer,
+ * starting from 00:00 to 23:59.
+ *
+ *
+ */
+
+void jack_bauer(void)
+{
+	int sym, min, minute;
+
+	for (sym = 0; sym < 1440; sym++)
+	{
+		_putchar(':');
+		min = 0;
+		for (min = 0; min <= 6; min++)
+		{
+			minute = 0;
+			for (minute = 0; minute < 6; minute++)
+			{
+				_putchar(minute);
+			}
+		}
+	}
+}

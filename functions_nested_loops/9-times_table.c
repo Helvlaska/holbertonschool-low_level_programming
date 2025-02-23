@@ -16,9 +16,12 @@ void times_table(void)
 		{
 			int produit = chiffre * table;
 
-			if (produit <= 9)
+			if (chiffre != 0 && produit < 10)
 			{
 				_putchar(' ');
+			}
+			if (produit <= 9)
+			{
 				_putchar('0' + produit);
 			}
 			else
@@ -31,10 +34,7 @@ void times_table(void)
 				_putchar(',');
 				_putchar(' ');
 			}
-			else
-			{
-				_putchar('\n');
-			}
 		}
+		_putchar('\n');
 	}
 }

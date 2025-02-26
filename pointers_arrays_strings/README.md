@@ -1,0 +1,1 @@
+le dossier contien des exercices pour s'entrainer aux pointeurs, au array, et  la structure de donnes en C 

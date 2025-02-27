@@ -1,0 +1,41 @@
+#include "main.h"
+#include <stdio.h>
+/**
+ * puts_half - print the second half of the string
+ * @str: it's a string
+ *
+ */
+
+void puts_half(char *str)
+{
+	int length = 0; /*longueur string*/
+	int middle; /*le milieu de string*/
+	char *start = str; /*balise sur le debut de string*/
+
+	while (*str != '\0') /*boucle pour trouver la longueur*/
+	{
+		length++; /*on ajoute...*/
+		str++; /*...et on avance*/
+	}
+
+	/*calcul du pts de depart pr print 2e moitie*/
+	if (length % 2 == 0) /*si la string a une longueur pair*/
+	{
+		middle = length / 2;
+	}
+	else /*si impair*/
+	{
+		middle = (length + 1) / 2; /*on ajoute 1: length = pair => on /2*/
+	}
+
+	/*Revenir au depart pour se positionner sur middle*/
+	str = start + middle;
+
+	/*Afficher la 2e moitie*/
+	while (*str) /*(*str) est la version courte de (*str != '\0')*/
+	{
+		_putchar(*str);
+		str++;
+	}
+	_putchar('\n');
+}

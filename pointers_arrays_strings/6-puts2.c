@@ -9,13 +9,13 @@
 
 void puts2(char *str)
 {
-	while (*str != '\0')
+	while (*str != '\0') /*Tant qu'on est pas a la fin de la string */
 	{
-		if (*str % 2 == 0)
-		{
-			_putchar(*str);
-		}
-		str++;
+		_putchar(*str); /*Affiche le char actuel*/
+		str++; /*Avance d'1 char*/
+		if (*str == '\0') /*verifie que ce n'est pas la fin*/
+			break; /*fin de la boucle*/
+		str++; /*Avance d'1 char*/
 	}
 	_putchar('\n');
 }

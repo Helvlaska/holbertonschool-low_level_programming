@@ -12,8 +12,7 @@ char *_strcpy(char *dest, char *src)
 {
 	char *start = dest; /*save ptr de depart de dest*/
 
-	/*boucle pr copier/coller*/
-	while (*src)
+	while (*src) /*boucle pr copier/coller*/
 	{
 		*dest = *src;
 		dest++;
@@ -21,7 +20,5 @@ char *_strcpy(char *dest, char *src)
 	}
 	*dest = '\0'; /*on ajoute manuellement le char de fin de string*/
 
-	/*while nous a emmener a la fin de la string
-	 il faut revenir au debut avec start et return*/
-	return (start);
+	return (start); /*retour en debut de string avec start + return*/
 }

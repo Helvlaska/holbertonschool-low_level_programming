@@ -1,0 +1,33 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * _atoi - convert a string to an integer
+ * @s: it's a string
+ *
+ * Return: 0 it's ok
+ */
+
+int _atoi(char *s)
+{
+	int result = 0;
+	int sign = 1;
+	int digit = 0;
+
+	while (*s)
+	{
+		if (*s == '-')
+			sign *= -1;
+
+		if (*s >= '0' && *s <= '9')
+		{
+			result = result * 10 + (s* - '0');
+			digit = 1;
+		}
+		else if (digit)
+			break;
+		s++;
+	}
+
+	return result * sign;
+}

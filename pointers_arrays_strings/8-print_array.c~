@@ -1,0 +1,25 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * print_array -  prints n elements of an array of integers
+ * @a: it's array
+ * @n: is the number of elements of the array to be printed
+ *
+ */
+
+void print_array(int *a, int n)
+{
+	int i;
+
+	/*boucle qui print n fois et avance de 1*/
+	for (i = 0; i < n; i++)
+	{
+		printf("%d", a[i]); /*print la valeur de l'index sur lequel pointe mon pointeur*/
+		if (a[i] != ('\0' -1))
+		{
+			printf(", ");
+		}
+	}
+	printf("\n");
+}

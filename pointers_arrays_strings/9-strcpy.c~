@@ -1,0 +1,20 @@
+#include "main.h"
+#include <stdio.h>
+/**
+ * _strcpy - copies the string pointed to by src
+ * @dest: pointeur copie
+ * @src: pointeur a copier
+ *
+ * Return: 0 it's ok
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	while (*src)
+	{
+		*dest = (*src);
+		dest++;
+		src++;
+	}
+	return (0);
+}

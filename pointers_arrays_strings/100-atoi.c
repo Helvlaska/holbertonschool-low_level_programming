@@ -17,15 +17,17 @@ int _atoi(char *s)
 	int min_digit = -2147483648; /*overflow min*/
 	int digit; /*var pr convertir char en int*/
 
-    while (*s) /*on parcours la string*/
+	while (*s) /*on parcours la string*/
 	{
 		if (*s == '-') /*si '-' ds string...*/
+		{
 			sign *= -1; /*...sign devient -1*/
+		}
 
 		if (*s >= '0' && *s <= '9') /*si c'est un int...*/
 		{
 			digit = *s - '0'; /*convertir le char en int*/
-			
+
 			/*on verifie l'overflow*/
 			if (result > (max_digit - digit) / 10)
 			{
@@ -35,8 +37,8 @@ int _atoi(char *s)
 				}
 				else /*si trop petit...*/
 				{
-                    return (min_digit);
-                }
+					return (min_digit);
+				}
 			}
 
 			result = result * 10 + (*s - '0'); /*add chaque digit*/

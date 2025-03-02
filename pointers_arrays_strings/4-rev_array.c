@@ -1,0 +1,27 @@
+#include "main.h"
+
+/**
+ * reverse_array - reverses the content of an array of integers
+ * @a: it's an array
+ * @n: is the number of elements of the array
+ *
+ */
+
+void reverse_array(int *a, int n)
+{
+	int *start = a; /*balise au debut de a*/
+	int change; /*stockage valeur pour switch le debut et la fin*/
+	/*debut de a + on avance n fois - (1 est la position de a pas compter)*/
+	int *end = a + n - 1;
+
+	/*boucler tant que les ptr ne se croisent ps*/
+	while (start < end)
+	{
+		change = *start;
+		*start = *end;
+		*end = change;
+
+		start++;
+		end--;
+	}
+}

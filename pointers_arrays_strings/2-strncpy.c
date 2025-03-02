@@ -23,9 +23,11 @@ char *_strncpy(char *dest, char *src, int n)
 		i++;
 	}
 
+	/*boucle pour gerer si src est plus court que n*/
 	while (i < n)
 	{
 		*dest = '\0';
+		dest++;
 		i++;
 	}
 

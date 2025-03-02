@@ -12,7 +12,7 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	char *start = dest; /*balise pour revenir au debut*/
-	int i; /*compteur du nb de caracteres copier*/
+	int i = 0; /*compteur du nb de caracteres copier*/
 
 	/*boucle pour se positionner en fin de string*/
 	while (*dest)

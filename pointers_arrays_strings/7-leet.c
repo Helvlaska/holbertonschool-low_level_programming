@@ -23,7 +23,6 @@ char *leet(char *str)
 			{
 				/*on le change avec le char de change*/
 				*str = change[i];
-				break;
 			}
 			i++;
 		}

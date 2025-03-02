@@ -4,7 +4,7 @@
  * cap_string - capitalizes all words of a string.
  * @str: it's a string
  *
- *
+ * Return: modified string
  */
 
 char *cap_string(char *str)
@@ -18,9 +18,10 @@ char *cap_string(char *str)
 		{
 			*str -= 32;
 		}
-		word = (*str == ' '||*str == '\t'||*str == '\n'||*str == ','||
-			*str == ';'||*str == '.'||*str == '!'||*str == '?'||
-			*str == '('||*str == ')'||*str == '{'||*str == '}');
+		word = (*str == ' ' || *str == '\t' || *str == '\n'
+			|| *str == ',' || *str == ';' || *str == '.' ||
+			*str == '!' || *str == '?' || *str == '(' || *str == ')'
+			|| *str == '{' || *str == '}');
 
 		str++;
 	}

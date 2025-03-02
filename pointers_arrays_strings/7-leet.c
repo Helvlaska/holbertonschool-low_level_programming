@@ -10,28 +10,22 @@
 char *leet(char *str)
 {
 	char *start = str; /*balise en debut de string*/
+	/*creation de tableaux*/
+	char letter[] = "aAeEoOtTlL";
+	char change[] = "4433007711";
+	int i = 0; /*gestion de l'index*/
 
-	while (*str)
+	while (*str) /*boucle sur la string*/
 	{
-		if (*str == 'a' || *str == 'A')
+		while (letter[i]) /*recherche si *str est dans letter*/
 		{
-			*str = '4';
-		}
-		else if (*str == 'e' || *str == 'E')
-		{
-			*str = '3';
-		}
-		else if (*str == 'o' || *str == 'O')
-		{
-			*str = '0';
-		}
-		else if (*str == 't' || *str == 'T')
-		{
-			*str = '7';
-		}
-		else if (*str == 'l' || *str == 'L')
-		{
-			*str = '1';
+			if (*str == letter[i]) /*si oui...*/
+			{
+				/*on le change avec le char de change*/
+				*str = change[i];
+				break;
+			}
+			i++;
 		}
 
 		str++;

@@ -13,10 +13,11 @@ char *leet(char *str)
 	/*creation de tableaux*/
 	char letter[] = "aAeEoOtTlL";
 	char change[] = "4433007711";
-	int i = 0; /*gestion de l'index*/
+	int i; /*gestion de l'index*/
 
 	while (*str) /*boucle sur la string*/
 	{
+		i = 0;
 		while (letter[i]) /*recherche si *str est dans letter*/
 		{
 			if (*str == letter[i]) /*si oui...*/

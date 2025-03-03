@@ -6,6 +6,7 @@
  * @b: constant byte
  * @n: the first n bytes
  *
+ * Return: modified memory
  */
 
 char *_memset(char *s, char b, unsigned int n)

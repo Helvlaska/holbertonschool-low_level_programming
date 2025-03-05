@@ -1,0 +1,22 @@
+#include "main.h"
+
+/**
+ * print_chessboard - prints the chessboard.
+ * @a: it's a ptr...
+ * @[8]: ... vers un array de 8 char
+ *
+ */
+
+void print_chessboard(char (*a)[8])
+{
+	int l, c; /*var ligne, colonne*/
+
+	for (l = 0; l < 8; l++)
+	{
+		for (c = 0; c < 8; c++)
+		{
+			_putchar(a[l][c]);
+		}
+		_putchar('\n');
+	}
+}

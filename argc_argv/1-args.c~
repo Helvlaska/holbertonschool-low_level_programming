@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+/**
+ */
+
+/*dans la fonction on ne declare pas argv car on ne l'utilise pas*/
+int main(int argc, char *argv[])
+{
+	/*on ignore argv car pas utilise*/
+	(void)argv;
+
+	/*print seulement la length d'argument(s)*/
+	printf("%d\n", (argc - 1));
+
+	return (0);
+}

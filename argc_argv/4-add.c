@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, j;
+	int i;
        	int somme = 0;
 
 	/*si pas de nb donnes on retourne 0*/

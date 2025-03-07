@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - multiplie deux nb passe en argument
+ * @argc: est la length de argv
+ * @argv: est un array d'argument char
+ *
+ * Return: 0 tout c'est bien passe, 1 nok
+ */
+
+int main(int argc, char *argv[])
+{
+	int a, b;
+
+	/*il nous faut au moins deux arguments + nom du programme*/
+	/*soit : 0 1 2*/
+	if (argc < 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	/*on initialise les deux nb a multiplier*/
+	/*atoi = permet de faire passer des char (table ascii) en entier*/
+	a = atoi(argv[1]);
+	b = atoi(argv[2]);
+
+
+
+	/*print le resultat*/
+	printf("%d\n", a * b);
+
+	return (0);
+}

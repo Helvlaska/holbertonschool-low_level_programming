@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 	{
 		for (j = 0; argv[i][j]; j++)
 		{
-			/*si la valeur n'est pas comprise entre 0 et 9*/
-			if (*argv[i] < '0' || *argv[i] > '9')
+			/*on verifie que chaque caracteres soit un chiffre*/
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("Error\n");
 				return (1);

@@ -16,17 +16,15 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		/*si la valeur est comprise entre 0 et 9*/
-		if (*argv[i] > '0' && *argv[i] < '9')
-		{
-			/*on additionne en passant les char en entier*/
-			somme += atoi(argv[i]);
-		}
-		else
+		/*si la valeur n'est pas comprise entre 0 et 9*/
+		if (*argv[i] < '0' || *argv[i] > '9')
 		{
 			printf("Error\n");
 			return (1);
 		}
+
+		/*on additionne en passant les char en entier*/
+		somme += atoi(argv[i]);
 	}
 
 	printf("%d\n", somme);

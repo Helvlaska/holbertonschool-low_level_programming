@@ -1,0 +1,39 @@
+#include "main.h"
+
+/**
+ */
+/*fonction pour tester le nb de x ou n est divisible et un compteur*/
+int prime_test(int n, int x, int count_rec)
+{
+	/*si x est sup a n stop la recursive*/
+	if(x > n)
+	{
+		/*retourne 1 si exactement 2 diviseurs sinon 0*/
+		return (count_rec == 2);
+
+	}
+	/*si x est un diviseur de n*/
+	if (n % x == 0)
+	{
+		/*on incremente le compteur*/
+		count_rec++;
+	}
+
+	return (prime_test(n, x + 1, count_rec));
+}
+
+
+/**
+ */
+/*fonction pour trouver les nb premier*/
+int is_prime_number(int n)
+{
+	/*nb prem start a 2 donc on out 1 et nb negatifs*/
+	if (n <= 1)
+	{
+		return (0);
+	}
+
+	/*on appelle la fonction de test avec x=1 et compteur=0*/
+	return (prime_test(n, 1, 0));
+}

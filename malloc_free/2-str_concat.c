@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-		
+
 	/*calcul de la length de s1*/
 	for (count_s1 = 0; s1[count_s1] != '\0'; count_s1++)
 	;

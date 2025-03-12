@@ -36,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	/*alloue la mémoire pour s1 et n char de s2*/
 	fusion = malloc(count_s1 + n + 1);
-	if (!s1)
+	if (!fusion)
 		return (NULL);
 
 	/*copie s1 dans fusion*/

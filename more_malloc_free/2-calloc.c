@@ -12,7 +12,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	/*création du tableau*/
-	unsigned int *array;
+	char *array;
 	/*varibale pour boucler*/
 	unsigned int i;
 
@@ -26,7 +26,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (!array)
 		return (NULL);
 	/*boucle pour initialiser à 0 les éléments (nmemb)*/
-	for (i = 0; *array != '\0'; i++)
+	for (i = 0; i != '\0'; i++)
 		array[i] = 0;
 	return (array);
 }

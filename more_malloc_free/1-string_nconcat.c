@@ -20,13 +20,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	/*gérer si s1 ou s2 sont vides*/
 	if (s1 == NULL)
-    {
 		s1 = "";
-	}
-    if (s2 == NULL)
-    {
+	if (s2 == NULL)
 		s2 = "";
-	}
 
 	/*calcul de length de s1 et s2*/
 	for (count_s1 = 0; s1[count_s1] != '\0'; count_s1++)
@@ -36,9 +32,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	/*ajuster n si > s2*/
 	if (n > count_s2)
-	{
 		n = (count_s2);
-	}
 
 	/*alloue la mémoire pour s1 et n char de s2*/
 	fusion = malloc(count_s1 + n + 1);
@@ -57,6 +51,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	/*ajout du caratère de fin de string*/
 	fusion[i + j] = '\0';
-
 	return (fusion);
 }

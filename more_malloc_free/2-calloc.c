@@ -25,8 +25,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	/*vérifie si l'allocation à réussie*/
 	if (!array)
 		return (NULL);
+
 	/*boucle pour initialiser à 0 les éléments (nmemb)*/
-	for (i = 0; i != '\0'; i++)
+	for (i = 0; i < (nmemb * size); i++)
 		array[i] = 0;
 	return (array);
 }

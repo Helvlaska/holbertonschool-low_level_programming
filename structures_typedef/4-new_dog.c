@@ -31,11 +31,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/*allocation mémoire pour la copie de name*/
 	copy_name = malloc(count_name + 1);
 	if (!copy_name)
+	{
+		free(new_dog);
 		return (NULL);
+	}
 	/*allocation mémoire pour la copie de owner*/
 	copy_owner = malloc(count_owner + 1);
 	if (!copy_owner)
+	{
+		free(copy_name);
+        free(new_dog);
 		return (NULL);
+	}
 	/*copier name dans copy_name*/
 	while (name[i] != '\0')
 	{

@@ -15,7 +15,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/*ptr pour stocker les copies de name et owner*/
 	char *copy_name, *copy_owner;
 	/*compteurs de length*/
-	int count_name, count_owner, i;
+	int count_name, count_owner, i = 0, j = 0;
 	/*on vérifie que name et owner != null*/
 	if (name == NULL || owner == NULL)
 		return (NULL);
@@ -51,12 +51,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	copy_name[i] = '\0';
 	/*copier owner dans copy_owner*/
-	while (owner[i] != '\0')
+	while (owner[j] != '\0')
 	{
-		copy_owner[i] = owner[i];
+		copy_owner[j] = owner[j];
 		i++;
 	}
-	copy_owner[i] = '\0';
+	copy_owner[j] = '\0';
 	/*initialiser la structure avec les nouvelles valeurs */
 	new_dog->name = copy_name;
 	new_dog->age = age;

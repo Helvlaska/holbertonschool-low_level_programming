@@ -16,14 +16,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *copy_name, *copy_owner;
 	/*compteurs de length*/
 	int count_name, count_owner, i = 0, j = 0;
+
 	/*on vérifie que name et owner != null*/
 	if (name == NULL || owner == NULL)
 		return (NULL);
+
 	/*length de name et owner*/
 	for (count_name = 0; name[count_name] != '\0'; count_name++)
 	;
 	for (count_owner = 0; owner[count_owner] != '\0'; count_owner++)
 	;
+
 	/*allocation mémoire dans la structure*/
 	new_dog = malloc(sizeof(dog_t));
 	if (!new_dog)
@@ -40,9 +43,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!copy_owner)
 	{
 		free(copy_name);
-        free(new_dog);
+		free(new_dog);
 		return (NULL);
 	}
+
 	/*copier name dans copy_name*/
 	while (name[i] != '\0')
 	{
@@ -61,5 +65,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog->name = copy_name;
 	new_dog->age = age;
 	new_dog->owner = copy_owner;
+
 	return (new_dog);
 }

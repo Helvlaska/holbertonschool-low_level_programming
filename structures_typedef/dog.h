@@ -18,7 +18,7 @@ struct dog
 };
 
 /**
- * struct dog - Structure représentant un chien
+ * struct dog_t - Structure représentant un chien
  * @name: Nom du chien (chaîne de caractères)
  * @age: Âge du chien (nombre à virgule)
  * @owner: Nom du propriétaire (chaîne de caractères)
@@ -26,7 +26,7 @@ struct dog
  * Description: Structure contenant des informations sur un chien.
  */
 
-typedef struct dog
+typedef struct dog_t
 {
 	char *name;
 	float age;

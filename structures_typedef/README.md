@@ -1,0 +1,1 @@
+Contient les exercices sur les notions de structure et de typedef

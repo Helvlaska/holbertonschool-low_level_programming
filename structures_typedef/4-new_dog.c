@@ -54,7 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	while (owner[j] != '\0')
 	{
 		copy_owner[j] = owner[j];
-		i++;
+		j++;
 	}
 	copy_owner[j] = '\0';
 	/*initialiser la structure avec les nouvelles valeurs */

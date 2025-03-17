@@ -1,0 +1,1 @@
+Dossier qui contient les exercices sur les pointeurs sur fonctions.

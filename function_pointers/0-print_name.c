@@ -14,11 +14,8 @@
 /*ou en majuscule (fonction déclarées dans le main.c)*/
 void print_name(char *name, void (*f)(char *))
 {
-	/*vérifier que name n'est pas vide*/
-	if (name == NULL)
-		return;
-	/*vérifer que f n'est pas vide*/
-	if (f == NULL)
+	/*vérifier que name et f n'est pas vide*/
+	if (name == NULL || f == NULL)
 		return;
 
 	/*lors de l'appel de la fonction print_name...*/

@@ -18,6 +18,10 @@ void print_name(char *name, void (*f)(char *))
 	if (name == NULL || f == NULL)
 		return;
 
+	/*vérifie si name n'est pas une string null*/
+	if (name[0] == '\0')
+		return;
+
 	/*lors de l'appel de la fonction print_name...*/
 	/*le programme main va interrogé avec f qu'elle fonction utiliser*/
 	/*(minuscule ou majuscule)*/

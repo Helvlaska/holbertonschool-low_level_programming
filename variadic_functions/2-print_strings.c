@@ -36,6 +36,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			printf("%s", mot);
 		}
+		else
+		{
+			printf("(nil)");
+		}
 
 		/*on verifie que separator est ok et qu'on est pas la fin des args*/
 		if (separator != NULL && i < n - 1)

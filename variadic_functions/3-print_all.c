@@ -1,13 +1,12 @@
 #include "variadic_functions.h"
 #include <stdarg.h> /*bibliothèque pr use variadique fonction*/
-#include <stdio.h> /*bibliothèque pr use printf*/
+#include <stdio.h>  /*bibliothèque pr use printf*/
 #include <stdlib.h> /*bibliothèque pr use NULL*/
 
 /**
  * print_char - Affiche un caractère
  * @arguments: liste d'arguments variadiques
  */
-
 void print_char(va_list arguments)
 {
 	int c = va_arg(arguments, int); /*Les char sont promus en int*/
@@ -19,7 +18,6 @@ void print_char(va_list arguments)
  * print_int - Affiche un entier
  * @arguments: liste d'arguments variadiques
  */
-
 void print_int(va_list arguments)
 {
 	int n = va_arg(arguments, int);
@@ -31,7 +29,6 @@ void print_int(va_list arguments)
  * print_float - Affiche un nombre flottant
  * @arguments: liste d'arguments variadiques
  */
-
 void print_float(va_list arguments)
 {
 	double f = va_arg(arguments, double); /*Les float sont promus en double*/
@@ -40,10 +37,9 @@ void print_float(va_list arguments)
 }
 
 /**
- * print_string - Affiche une chaîne de caractères, ou (nil) si NULL
+ * print_string - Affiche une chaîne ou (nil) si NULL
  * @arguments: liste d'arguments variadiques
  */
-
 void print_string(va_list arguments)
 {
 	char *str = va_arg(arguments, char *);
@@ -57,22 +53,20 @@ void print_string(va_list arguments)
 }
 
 /**
- * print_all - Affiche tout type d'arguments selon le format donné
- * @format: chaîne de format contenant les types (c, i, f, s)
- * @...: arguments variadiques à afficher
+ * print_all - Affiche tous les arguments selon format
+ * @format: chaîne de format (c, i, f, s)
+ * @...: arguments variadiques
  */
-
 void print_all(const char * const format, ...)
 {
-	va_list arguments; /*variable pour lire tout les arguments*/
-
-	int i = 0, printed; /*variable d'index boucle + booleen*/
+	va_list arguments; /*variable pour lire tous les arguments*/
+	int i = 0, j, printed; /*index boucle et flag affichage*/
 
 	va_start(arguments, format); /*start lecture args*/
 
-	while (format[i]) /*boucle pour parcourir "format"*/
+	while (format && format[i]) /*parcours de format*/
 	{
-		printed = 0; /*réinitialisation à chaque tour*/
+		printed = 0;
 		switch (format[i])
 		{
 			case 'c':
@@ -94,14 +88,22 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		/*tant qu'on est pas au dernier argument et bool = true*/
-		if (printed == 1 && format[i + 1] != '\0')
+		if (printed) /*vérifie s'il faut un séparateur*/
 		{
-			printf(", "); /*on met un separateur*/
+			j = i + 1;
+			while (format[j]) /*cherche un prochain type valide*/
+			{
+				if (format[j] == 'c' || format[j] == 'i' ||
+				    format[j] == 'f' || format[j] == 's')
+				{
+					printf(", "); /*affiche séparateur*/
+					break;
+				}
+				j++;
+			}
 		}
-		i++; /*on avance dans format*/
+		i++;
 	}
 	printf("\n"); /*retour à la ligne*/
-	/*on ferme notre parcours de la liste pour éviter la fuite de mémoire*/
-	va_end(arguments);
+	va_end(arguments); /*nettoie la liste d'arguments*/
 }

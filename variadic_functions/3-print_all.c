@@ -68,8 +68,7 @@ void print_all(const char * const format, ...)
 
 	int i = 0, printed; /*variable d'index boucle + booleen*/
 
-	/*variable pour dire où commence la lecture des args*/
-	va_start(arguments, format);
+	va_start(arguments, format); /*start lecture args*/
 
 	while (format[i]) /*boucle pour parcourir "format"*/
 	{
@@ -96,7 +95,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		/*tant qu'on est pas au dernier argument et bool = true*/
-		if (printed == 1 && format[i + 1] != '\0') 
+		if (printed == 1 && format[i + 1] != '\0')
 		{
 			printf(", "); /*on met un separateur*/
 		}

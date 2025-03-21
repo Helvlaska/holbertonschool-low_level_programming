@@ -66,35 +66,37 @@ void print_all(const char * const format, ...)
 {
 	va_list arguments; /*variable pour lire tout les arguments*/
 
-	int i = 0; /*variable d'index dans une boucle*/
+	int i = 0, printed; /*variable d'index boucle + booleen*/
 
 	/*variable pour dire où commence la lecture des args*/
 	va_start(arguments, format);
 
 	while (format[i]) /*boucle pour parcourir "format"*/
 	{
+		printed = 0; /*réinitialisation à chaque tour*/
 		switch (format[i])
 		{
 			case 'c':
 				print_char(arguments);
+				printed = 1;
 				break;
-
 			case 'i':
 				print_int(arguments);
+				printed = 1;
 				break;
-
 			case 'f':
 				print_float(arguments);
+				printed = 1;
 				break;
-
 			case 's':
 				print_string(arguments);
+				printed = 1;
 				break;
-
 			default:
 				break;
 		}
-		if (format[i + 1] != '\0') /*tant qu'on est pas au dernier argument*/
+		/*tant qu'on est pas au dernier argument et bool = true*/
+		if (printed == 1 && format[i + 1] != '\0') 
 		{
 			printf(", "); /*on met un separateur*/
 		}

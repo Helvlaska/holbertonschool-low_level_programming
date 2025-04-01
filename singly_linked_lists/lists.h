@@ -1,5 +1,6 @@
 #ifndef LISTS_H
 #define LISTS_H
+#include <stddef.h>
 
 /**
  * struct list_s - singly linked list
@@ -9,13 +10,20 @@
  *
  * Description: singly linked list node structure
  */
-typedef struct list_s /*définition de la structure de la liste chainée*/
+typedef struct list_s
 {
-    char *str; /*type de donnée du noeud (ptr sur string)*/
-    unsigned int len; /*type de donnée du noeud (unsigned int)*/
-    struct list_s *next; /*pointeur pour passer au noeud suivant*/
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
+/*définition de la structure de la liste chainée*/
+/*type de donnée du noeud (ptr sur string)*/
+/*type de donnée du noeud (unsigned int)*/
+/*pointeur pour passer au noeud suivant*/
+
 int _putchar(char c);
+size_t print_list(const list_t *h);
 
 #endif
+

@@ -16,9 +16,9 @@
  */
 size_t list_len(const list_t *h)
 {
-    size_t count = 0; /*compteur de length*/
+	size_t count = 0; /*compteur de length*/
 
-    while (h != NULL) /*on parcour la liste de noeuds*/
+	while (h != NULL) /*on parcour la liste de noeuds*/
 	{
 		if (h->str == NULL) /*on vérifie si le noeud est vide*/
 			return (1); /* retourne 1 d'erreur*/

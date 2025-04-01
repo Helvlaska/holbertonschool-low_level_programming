@@ -18,25 +18,17 @@
  */
 size_t print_list(const list_t *h)
 {
-	int count = 0; /*compteur de length*/
+	size_t count = 0; /*compteur de length*/
 
-	const list_t *noeud = h; /*pointeur pour parcourir les noeuds*/
-
-	/*on vérifie que h est vide*/
-	if (h == NULL)
+	while (h != NULL) /*on parcour la liste de noeuds*/
 	{
-		printf("[0] (nil)\n");
-		return (0);
-	}
+		if (h->str == NULL) /*on vérifie si le noeud est vide*/
+			printf("[0] (nil)\n"); /* print message d'erreur*/
+		else /*sinon print le noeud en cours*/
+			printf("[%d] %s\n", h->len, h->str);
 
-	while (noeud != NULL) /*on parcour la liste de noeuds*/
-	{
-		if (noeud->str == NULL) /*on vérifie si le noeud est vide*/
-			printf("[0] (nil)\n");
-		else /*on print le noeud en cours*/
-			printf("[%d] %s\n", noeud->len, noeud->str);
 		count++; /*on incrémente count*/
-		noeud = noeud->next; /*on passe au noeud suivant*/
+		h = h->next; /*on passe au noeud suivant*/
 	}
 
 	return (count); /*on retourne le compteur (length)*/

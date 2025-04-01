@@ -11,8 +11,8 @@
  */
 typedef struct list_s /*définition de la structure de la liste chainée*/
 {
-    char *str; /*type de donnée du noeud*/
-    unsigned int len; /*type de donnée du noeud*/
+    char *str; /*type de donnée du noeud (ptr sur string)*/
+    unsigned int len; /*type de donnée du noeud (unsigned int)*/
     struct list_s *next; /*pointeur pour passer au noeud suivant*/
 } list_t;
 

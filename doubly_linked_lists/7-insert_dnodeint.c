@@ -26,37 +26,40 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_noeud; /*nouveau noeud*/
 	unsigned int i = 0; /*variable pour suivre l'index*/
 
-	if (idx == 0) /*si l'index[0]*/
-		return (add_dnodeint(h, n)); /*nouveau noeud devient head*/
+	if (idx == 0) /*si index[0] = head*/
+		return (add_dnodeint(h, n)); /*on place le noeud au début*/
 
-	if (h == NULL || (*h == NULL && idx != 0)) /*si h est vide et index != 0*/
-		return (NULL); /* si vide il peu pas y avoir d'index positif = null*/
+	if (h == NULL || (*h == NULL && idx != 0)) /*si h est vide et index > 0*/
+		return (NULL); /*impossible = on renvoie null*/
 
-	while (cursor != NULL) /*on parcour toute la liste*/
+	while (cursor != NULL) /*on parcour la liste de noeud*/
 	{
-		if (cursor == NULL) /*si on arrive à la fin de la liste*/
-			return (add_dnodeint_end(h, n)); /*on place le new_noeud à la fin*/
-
-		if (i == idx) /*si match d'index*/
+		if (i == idx) /*si match entre i et l'index*/
 		{
-			/*allocation de la mémoire pour le nouveau moeud*/
-			new_noeud = malloc(sizeof(dlistint_t));
+			new_noeud = malloc(sizeof(dlistint_t)); /*on alloue la mémoire*/
+			if (!new_noeud) /*on vérifie l'allocation si nok*/
+				return (NULL); /*si nok on renvoie null*/
 
-			if (!new_noeud) /*on vérifie si l'allocation fail*/
-				return (NULL); /*si echec renvoie null*/
+			new_noeud->n = n; /*on initialise la valeur de new_noeud*/
+			new_noeud->next = cursor; /*on pointe next sur le curseur*/
+			new_noeud->prev = cursor->prev; /*on pointe prev sur le noeud pré*/
 
-			new_noeud->n = n; /*initialisation de la valeur*/
-			new_noeud->next = cursor; /*on fix notre noeud next au idx*/
-			new_noeud->prev = cursor->prev; /*cursor->prev = (idx - 1)*/
+			if (cursor->prev) /*on vérifie si le noeud précédant = pas null*/
+				cursor->prev->next = new_noeud;/*node préc next->sur new_node*/
 
-			if (cursor->prev) /*vérifie si y a un noeud avant cursor*/
-				/*le noeud précé(prev) cursor sont next pointe le new_noeud*/
-				cursor->prev->next = new_noeud;
+			cursor->prev = new_noeud; /*node précé devient new_noeud*/
 
-			cursor->prev = new_noeud; /*noeud pprécédent pointe sur new_noeud*/
+			if (new_noeud->prev == NULL) /*si new_noeud prev pointe sur null*/
+				*h = new_noeud; /*il devient le head*/
+
+			return (new_noeud); /*on retourne le nouveau noeud*/
 		}
-		cursor = cursor->next; /*on avance dans la liste de noeuds*/
-		i++; /*on avance aussi dans l'index*/
+		cursor = cursor->next; /*on avance dans la liste*/
+		i++; /*on avance sur l'index aussi*/
 	}
-	return (new_noeud); /*on retourne le nouveau noeud*/
+
+	if (i == idx) /*si on arrive en fin de liste sans match i/idx*/
+		return (add_dnodeint_end(h, n)); /*on place new_noeud à la fin*/
+
+	return (NULL); /*si index > length de la liste on renvoie null*/
 }

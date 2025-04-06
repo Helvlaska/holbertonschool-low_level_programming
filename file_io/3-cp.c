@@ -1,7 +1,6 @@
 #include <fcntl.h> /*open() et les flags O_RDONLY, etc*/
 #include <unistd.h> /*pour read(), write(), close(), STDOUT_FILENO*/
 #include <stdio.h> /*pour dprintf()*/
-#include "main.h"
 
 /**
  * main - copie le contenu d’un fichier dans un autre

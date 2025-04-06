@@ -9,7 +9,8 @@
  * @letters: Nombre maximum de caractères à lire et afficher
  *
  * Return: Le nombre réel de caractères lus et affichés,
- *         ou 0 si une erreur survient (fichier inexistant, lecture/écriture échouée, etc.)
+ * ou 0 si une erreur survient
+ * (fichier inexistant, lecture/écriture échouée, etc.)
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {

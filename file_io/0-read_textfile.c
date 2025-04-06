@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *array_stock; /*initalisation d'un tableau pour stocker char*/
 	size_t count = 0; /*compteur de char*/
 
-	if (filename == NULL) /*si le fichier est vide*/
+	if (filename == NULL || letters == 0) /*si le fichier est vide*/
 		return (0); /*echec fichier vide*/
 
 	open_file = open(filename, O_RDONLY); /*Ouvrir le fichier + lecture seule*/

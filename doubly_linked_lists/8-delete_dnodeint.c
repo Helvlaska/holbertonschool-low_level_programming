@@ -56,5 +56,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	cursor->next = NULL; /*le next du node supprimé est NULL*/
 	cursor->prev = NULL; /*le prev du node supprimé est NULL*/
 	free(cursor); /*libérer le node supprimé*/
-	return (-1); /*si on atteint la fin sans trouver l’index*/
+	return (1); /*la fonction c'est bien passée on retourne 1*/
 }

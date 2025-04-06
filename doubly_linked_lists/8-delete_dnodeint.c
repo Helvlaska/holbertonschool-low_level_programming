@@ -28,9 +28,11 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (index == 0) /*si on veut supprimer le premier node*/
 	{
-		if (cursor->next != NULL) /*si le node suivant n’est pas NULL*/
-			cursor->next->prev = NULL; /*le prev du node suivant est NULL*/
 		*head = cursor->next; /*le node suivant devient le head*/
+		if (*head) /*si le head n’est pas NULL*/
+			(*head)->prev = NULL; /*le prev du head devient NULL*/
+		cursor->next = NULL; /*le next du node supprimé est NULL*/
+		cursor->prev = NULL; /*le prev du node supprimé est NULL*/
 		free(cursor); /*libérer le node supprimé*/
 		return (1); /*retourner 1 pour indiquer le succès*/
 	}
@@ -51,6 +53,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		/*le prev du node suivant devient le node précédent*/
 		cursor->next->prev = cursor->prev;
 
+	cursor->next = NULL; /*le next du node supprimé est NULL*/
+	cursor->prev = NULL; /*le prev du node supprimé est NULL*/
 	free(cursor); /*libérer le node supprimé*/
 	return (-1); /*si on atteint la fin sans trouver l’index*/
 }
